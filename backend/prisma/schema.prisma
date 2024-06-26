@@ -14,15 +14,14 @@ datasource db {
 }
 
 model Photo {
-  id          Int       @id @default(autoincrement())
+  id          Int        @id @default(autoincrement())
   title       String
-  description String
+  description String     @db.Text
   image       String
   visible     Boolean
-  category    Category? @relation(fields: [categoryId], references: [id])
-  categoryId  Int?
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+  categories  Category[]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
 }
 
 model Category {
@@ -34,12 +33,13 @@ model Category {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  name      String
-  password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id            Int      @id @default(autoincrement())
+  email         String   @unique
+  name          String
+  password      String
+  image_profile String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 }
 
 model Message {
