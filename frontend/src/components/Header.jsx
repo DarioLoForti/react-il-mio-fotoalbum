@@ -39,19 +39,6 @@ const {isLoggedIn, logout, user} = useAuth();
                             <NavLink to={`/dashboard`}>Dashboard</NavLink>
                         </li>
                     }
-                    {isLoggedIn &&
-                        
-                            <div className="avatar">
-                                {user.image_path &&
-                                    <figure>
-                                        <img src={user.image_path} alt={user.name} />
-                                    </figure>
-                                }
-                                {user.name && <h3>{user.name}</h3>}
-                                <button onClick={logout}>Logout</button>
-                            </div>
-                        
-                    }
                 </menu>
             </nav>
         </header>

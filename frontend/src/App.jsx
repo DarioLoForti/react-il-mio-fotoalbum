@@ -8,6 +8,7 @@ import Photos from "./pages/Photos";
 import PrivateLayout from "./layouts/PrivateLayout";
 import Dashboard from "./pages/Dashboard";
 import ProtectPage from "./middlewares/ProtectPage";
+import ShowPhoto from "./pages/ShowPhoto";
 
 
 export default function(){
@@ -26,12 +27,12 @@ export default function(){
                 {/* Private */}
                 <Route path="/" element={
                     <ProtectPage>
-                    <PrivateLayout />
+                    <DefaultLayout />
                     </ProtectPage>
                     }>
                         <Route path="dashboard" element={<Dashboard />} />
-                    <Route path="posts">
-                            {/* <Route path=":id" element={<SinglePhoto/>}/> */}
+                    <Route path="photos">
+                            <Route path=":id" element={<ShowPhoto/>}/>
                             {/* <Route path=":id/edit" element={<EditPost/>}/> */}
                             {/* <Route path="create" element={<AddPhoto/>}/> */}
                    </Route>
