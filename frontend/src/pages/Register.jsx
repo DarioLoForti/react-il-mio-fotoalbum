@@ -33,9 +33,10 @@ export default function(){
     }
 
     return (
+        
         <div className="register-container">
             <form onSubmit={handleSubmit} className="register-form">
-                <h2>Register</h2>
+                <h1>Register</h1>
                 <div className="form-control">
                     <label>Username</label>
                     <input 
