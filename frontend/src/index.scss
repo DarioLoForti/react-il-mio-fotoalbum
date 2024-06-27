@@ -58,6 +58,26 @@ a{
     
 }
 
+.login{
+    height: 100vh;
+    padding-top: 100px;
+    background-color: black;
+    color: white;
+    h1{
+        text-align: center;
+        padding-bottom: 20px;
+    
+    }
+    a{
+        background-color: #333;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-decoration: none;
+    
+    }
+}
+
 .photos{
     display: flex;
     flex-wrap: wrap;

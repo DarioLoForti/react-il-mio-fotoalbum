@@ -32,6 +32,8 @@ export default function(){
     }
 
     return(<>
+    <div className="login">
+        <h1>Login</h1>
         <form onSubmit={handleLogin}>
         <label> Email </label>
             <input 
@@ -59,6 +61,7 @@ export default function(){
             don't have an account? <Link to="/register">Register</Link>
             </h3>
         </div>
+    </div>
     </>)
 
 }
