@@ -37,7 +37,7 @@ const {isLoggedIn, logout, user} = useAuth();
 
     return (
 
-        <div className="sidebar">
+        <div className="dashboard">
             <h2>Sidebar</h2>
             <ul>
                 {urlPhoto.map( ({label, href}, i) => (
@@ -75,42 +75,5 @@ const {isLoggedIn, logout, user} = useAuth();
                         </div>
                 }
         </div>
-        // <header>
-        //     <nav className="navbar">
-        //         <menu>
-        //             {urlPages.map( ({label, href}, i) => (
-        //                 <li key={`urlPage${i}`}>
-        //                     <NavLink to={href}>{label}</NavLink>
-        //                 </li>
-        //             ))}
-        //             {!isLoggedIn && <>
-        //                 <li>
-        //                     <NavLink to={`/login`}>Login</NavLink>
-        //                 </li>
-        //                 <li>
-        //                     <NavLink to={`/register`}>Register</NavLink>
-        //                 </li>
-        //             </>}
-        //             {isLoggedIn &&
-        //                 <li>
-        //                     <NavLink to={`/dashboard`}>Dashboard</NavLink>
-        //                 </li>
-        //             }
-        //             {isLoggedIn &&
-                        
-        //                     <div className="avatar">
-        //                         {user.image_path &&
-        //                             <figure>
-        //                                 <img src={user.image_path} alt={user.name} />
-        //                             </figure>
-        //                         }
-        //                         {user.name && <h3>{user.name}</h3>}
-        //                         <button onClick={logout}>Logout</button>
-        //                     </div>
-                        
-        //             }
-        //         </menu>
-        //     </nav>
-        // </header>
     )
 }
