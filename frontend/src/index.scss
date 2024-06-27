@@ -263,6 +263,23 @@ form{
                 text-decoration: none;
                 color: black;
             }
+            .message{
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+                h3{
+                    font-size: 25px;
+                }
+                h5{
+                    font-size: 20px;
+                }
+
+                p{
+                    font-size: 15px;
+                }
+            
+            }
         }
     
     }
@@ -284,10 +301,12 @@ form{
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 5px rgba(0,0,0,.1);
+        
             a{
                 text-decoration: none;
                 color: black;
             }
+            
         }
     
     }

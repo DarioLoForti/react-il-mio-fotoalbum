@@ -22,9 +22,11 @@ export default function(){
                     <ul>
                         {messages.map(m => (
                             <li key={`message${m.id}`}>
+                                <div className="message">
                                 <h3>{m.name}</h3>
                                 <h5>{m.email}</h5>
                                 <p>{m.message}</p>
+                                </div>
 
                             </li>
                         ))}
