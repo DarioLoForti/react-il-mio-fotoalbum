@@ -7,7 +7,7 @@ export default function Slider({ photos }) {
         if (photos && photos.length > 0) {
             const interval = setInterval(() => {
                 setCurrentIndex((prevIndex) => (prevIndex + 1) % photos.length);
-            }, 10000); 
+            }, 5000); 
             return () => clearInterval(interval);
         }
     }, [photos]);
