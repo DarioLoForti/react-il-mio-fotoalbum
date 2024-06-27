@@ -34,11 +34,11 @@ export default function(){
              <h3>Welcome {user.name}!</h3> :
                 <h3>Welcome guest!</h3>
             }
-        </div>
-
         <Link to="photos">Tutte le mie foto</Link>
 
         {photos ? <Slider photos={photos} /> : <p>Loading photos...</p>}
+        </div>
+
 
     </>)
 }
