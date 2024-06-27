@@ -10,10 +10,6 @@ const urlPhoto = [
         label: 'Add Photo',
         href: '/create'
     },
-    {
-        label: 'Edit Photo',
-        href: '/edit'
-    },
 ];
 
 const urlCategories = [
@@ -25,10 +21,6 @@ const urlCategories = [
         label: 'Add Category',
         href: '/categories/create'
     },
-    {
-        label: 'Edit Category',
-        href: '/categories/edit'
-    }
 ];
 
 const urlMessage = [

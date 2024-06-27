@@ -248,14 +248,24 @@ form{
     flex-direction: column;
     gap: 1rem;
     align-items: center;
+    .top-card{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
     .card-photo{
-    
-        width: 1000px;
+        width: 900px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;
         gap: 1rem;
+
+        p{
+            margin: 20px;
+            font-size: 20px;
+        }
     
         ul{
             list-style-type: none;
@@ -267,6 +277,7 @@ form{
             }
         
         }
+        
     }
 }
 
@@ -374,3 +385,14 @@ form{
     }
   }
   
+
+  .edit{
+    background-color: black;
+    height: 100vh;
+    h1{
+        text-align: center;
+        padding-top: 100px;
+        padding-bottom: 20px;
+        color: white;
+    }
+  }

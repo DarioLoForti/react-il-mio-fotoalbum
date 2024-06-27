@@ -10,6 +10,7 @@ import Dashboard from "./pages/Dashboard";
 import ProtectPage from "./middlewares/ProtectPage";
 import ShowPhoto from "./pages/ShowPhoto";
 import AddPhoto from "./pages/AddPhoto";
+import EditPhoto from "./pages/EditPhoto";
 
 
 export default function(){
@@ -34,7 +35,7 @@ export default function(){
                         <Route path="dashboard" element={<Dashboard />} />
                     <Route path="photos">
                             <Route path=":id" element={<ShowPhoto/>}/>
-                            {/* <Route path=":id/edit" element={<EditPost/>}/> */}
+                            <Route path=":id/edit" element={<EditPhoto/>}/>
                    </Route>
                             <Route path="create" element={<AddPhoto/>}/>
                 </Route>

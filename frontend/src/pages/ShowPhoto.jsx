@@ -1,7 +1,8 @@
 import axios from "../utils/axiosClient";
 import { useEffect, useState } from "react";
+import { MdDelete, MdEditNote } from "react-icons/md";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function(){
 
@@ -14,7 +15,13 @@ export default function(){
             setPhoto(photo);
     }
 
-    
+    const navigate = useNavigate();
+
+    const deletePhoto = async id => {
+        await axios.delete(`/photos/${id}`);
+        navigate('/photos');
+
+    }
 
     useEffect(() => {
         fetchPost();
@@ -32,7 +39,11 @@ export default function(){
         {photo === null ? <span>loading</span> :
             <div className="photo">
                 <div className="card-photo">
-                    <h1>{ photo.title }</h1>
+                    <div className="top-card">
+                        <h4><Link to={`/photos/${id}/edit`}>Modifica <MdEditNote /></Link></h4>
+                        <h1>{ photo.title }</h1>
+                        <h4 onClick={() => deletePhoto(photo.id)}>Elimina <MdDelete/></h4>
+                    </div>
                     <img src={photo.image} alt={photo.title} />
                     <p>{photo.description}</p>
                     {photo.categories && <h4>Categorie:</h4>}
@@ -48,4 +59,5 @@ export default function(){
             </div>
         }
     </>)
+    
 }
