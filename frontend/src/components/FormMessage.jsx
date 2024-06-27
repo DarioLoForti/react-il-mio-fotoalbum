@@ -26,6 +26,7 @@ export default function ({initialData, onSubmit}) {
 
     return (
         <>
+        <div className="messag">
             <form onSubmit={handleSubmit} id="articleForm">
                 <div className='form-control'>
                     <label> Name </label>
@@ -53,6 +54,7 @@ export default function ({initialData, onSubmit}) {
                     <button>Submit</button>
             </form>
             {error && <div className="error">{error}</div>}
+        </div>
         </>
     )
 

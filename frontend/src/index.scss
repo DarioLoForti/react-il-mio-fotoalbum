@@ -224,7 +224,15 @@ form{
         margin-bottom: 20px;
     }
 }
-    
+
+.messag{
+    form{
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.664);
+    }
+}
+
 .create{
     background-color: black;
     display: flex;
