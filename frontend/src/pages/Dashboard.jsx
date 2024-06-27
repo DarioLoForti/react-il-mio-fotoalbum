@@ -1,7 +1,5 @@
-import { Link, useSearchParams } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import { useState, useEffect } from "react";
-import axios from "../utils/axiosClient";
+
 
 export default function(){
 
@@ -11,6 +9,10 @@ export default function(){
     return (<>
         <div className="homepage">
             <h1>Dashboard</h1>
+            {isLoggedIn ?
+             <h3>Welcome {user.name}!</h3> :
+                <h3>Welcome guest!</h3>
+            }
         </div>
     </>)
 }
