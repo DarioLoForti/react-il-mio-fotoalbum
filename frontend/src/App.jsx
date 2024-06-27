@@ -11,6 +11,7 @@ import ProtectPage from "./middlewares/ProtectPage";
 import ShowPhoto from "./pages/ShowPhoto";
 import AddPhoto from "./pages/AddPhoto";
 import EditPhoto from "./pages/EditPhoto";
+import Categories from "./pages/Categories";
 
 
 export default function(){
@@ -34,6 +35,11 @@ export default function(){
                     }>
                         <Route path="dashboard" element={<Dashboard />} />
                     <Route path="photos">
+                            <Route path=":id" element={<ShowPhoto/>}/>
+                            <Route path=":id/edit" element={<EditPhoto/>}/>
+                   </Route>
+                   <Route path="categories">
+                            <Route index element={<Categories/>} />
                             <Route path=":id" element={<ShowPhoto/>}/>
                             <Route path=":id/edit" element={<EditPhoto/>}/>
                    </Route>

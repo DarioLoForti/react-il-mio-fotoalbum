@@ -242,6 +242,31 @@ form{
         display: inline-block;
     }
 }
+.categories{
+    padding-top: 100px;
+    margin-left: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+
+    ul{
+        list-style-type: none;
+        display: flex;
+        gap: 1rem;
+        li{
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,.1);
+            a{
+                text-decoration: none;
+                color: black;
+            }
+        }
+    
+    }
+}
 .photo{
     margin-left: 150px;
     display: flex;
