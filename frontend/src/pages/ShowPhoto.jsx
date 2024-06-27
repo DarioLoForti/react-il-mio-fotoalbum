@@ -50,7 +50,7 @@ export default function(){
                     <ul>
                         {photo.categories.map(c => (
                             <li key={`category${c.id}`}>
-                                {c.name}
+                                <h5>{c.name}</h5>
                             </li>
                         ))}
                     </ul>
