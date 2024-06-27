@@ -60,6 +60,7 @@ a{
 }
 
 .register-container{
+    
     height: 100vh;
     padding-top: 100px;
     background-color: black;
@@ -69,6 +70,13 @@ a{
         padding-bottom: 20px;
     
     }
+    form{
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.664);
+        margin: auto;
+        width: 300px;
+    }
 }
 
 .login{
@@ -76,6 +84,14 @@ a{
     padding-top: 100px;
     background-color: black;
     color: white;
+    form{
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.664);
+        margin: auto;
+        width: 300px;
+        margin-bottom: 30px;
+    }
     h1{
         text-align: center;
         padding-bottom: 20px;
