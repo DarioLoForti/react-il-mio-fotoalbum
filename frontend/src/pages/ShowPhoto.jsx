@@ -30,14 +30,15 @@ export default function(){
     
 
     return(<>
-    <div className="back">
-        <Link to="../" relative="path">Back</Link>
-    </div>
+   
     {/* <div className="back">
         <Link to={`/posts/${slug}/edit`}>edit photo</Link>
     </div> */}
         {photo === null ? <span>loading</span> :
             <div className="photo">
+                 <div className="back">
+                    <Link to="../" relative="path">Back</Link>
+                </div>
                 <div className="card-photo">
                     <div className="top-card">
                         <h4><Link to={`/photos/${id}/edit`}>Modifica <MdEditNote /></Link></h4>
