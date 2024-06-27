@@ -2,6 +2,8 @@ import { Link, useSearchParams } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { useState, useEffect } from "react";
 import axios from "../utils/axiosClient";
+import Slider from "../components/Slider";
+
 
 export default function(){
 
@@ -13,12 +15,16 @@ export default function(){
 
     // const currPage = parseInt(searchParams.get('page'));
 
+    const fetchPhotos = async () => {
+        const { data: array } = await axios.get(`/photos`);
+        setPhotos(array.data);
+    }
+
+
     useEffect(() => {
-        setPhotos(null);
-            axios.get(`/photos`).then(({data: res}) => setPhotos(res.data)
-            
-        );
+       fetchPhotos();
     }, []);
+    console.log(photos);
 
 
     return (<>
@@ -31,5 +37,8 @@ export default function(){
         </div>
 
         <Link to="photos">Tutte le mie foto</Link>
+
+        {photos ? <Slider photos={photos} /> : <p>Loading photos...</p>}
+
     </>)
 }
