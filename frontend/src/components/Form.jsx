@@ -3,15 +3,14 @@ import { useGlobal } from '../contexts/GlobalContext';
 
 export default function ({initialData, onSubmit}) {
 
-    const { categories, tags } = useGlobal();
+    const { categories } = useGlobal();
 
     const defaultData = initialData || {
         title: '',
-        content: '',
+        description: '',
         image: '',
-        categoryId: '',
-        tags: [],
-        published: false
+        categories: [],
+        visible: false
     }
 
 
@@ -41,47 +40,33 @@ export default function ({initialData, onSubmit}) {
                     />
                 </div>
                 <div className='form-text-area'>
-                    <label> Content </label><br />
+                    <label> Description </label><br />
                     <textarea
-                        value={data.content}
-                        onChange={(e) => changeData('content', e.target.value)}
+                        value={data.description}
+                        onChange={(e) => changeData('description', e.target.value)}
                     />
                 </div>
                 <div className='form-control'>
                     <label> Image </label>
                     <input 
                         type="file"
-                        // value={data.image}
                         onChange={(e) => changeData('image', e.target.files[0])}
                     />
                 </div>
                 <div className='form-control'>
-                    <label> Category </label>
-                    <select
-                        value={data.categoryId}
-                        onChange={(e) => changeData('categoryId', e.target.value)}
-                    >
-                        <option value="" disabled>Seleziona categoria</option>
-                        {categories.map(c => (
-                            <option key={`categoryId${c.id}`} 
-                            value={c.id}>{c.name}</option>
-                        ))}
-                    </select>
-                </div>
-                <div className='form-control'>
-                    <h3>tags:</h3>
-                    <div className='tags'>
-                        {tags.map(({id, name}, index) => (
-                            <label key={`tag${index}`}>
+                    <h3>categories:</h3>
+                    <div className='categories'>
+                        {categories.map(({id, name}, index) => (
+                            <label key={`category${index}`}>
                                 <input
                                     type="checkbox"
-                                    checked={data.tags.includes(id)}
+                                    checked={data.categories.includes(id)}
                                     onChange={() => {
-                                        const curr = data.tags;
+                                        const curr = data.categories;
                                         const newTags = curr.includes(id) ?
-                                         curr.filter(t => t !== id) :
+                                         curr.filter(c => c !== id) :
                                           [...curr, id];
-                                        changeData('tags', newTags);
+                                        changeData('categories', newCategories);
                                     }}
                                 />
                                 {name}
@@ -90,12 +75,12 @@ export default function ({initialData, onSubmit}) {
                     </div>
                 </div>
                 <div className='form-control'>
-                    <div className='published'>
-                    <label> Published </label>
+                    <div className='visible'>
+                    <label> Visible </label>
                     <input
                         type="checkbox"
-                        checked={data.published}
-                        onChange={(e) => changeData('published', e.target.checked)}
+                        checked={data.visible}
+                        onChange={(e) => changeData('visible', e.target.checked)}
                     />
                     </div>
                 </div>

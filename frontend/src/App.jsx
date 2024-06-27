@@ -9,6 +9,7 @@ import PrivateLayout from "./layouts/PrivateLayout";
 import Dashboard from "./pages/Dashboard";
 import ProtectPage from "./middlewares/ProtectPage";
 import ShowPhoto from "./pages/ShowPhoto";
+import AddPhoto from "./pages/AddPhoto";
 
 
 export default function(){
@@ -34,11 +35,11 @@ export default function(){
                     <Route path="photos">
                             <Route path=":id" element={<ShowPhoto/>}/>
                             {/* <Route path=":id/edit" element={<EditPost/>}/> */}
-                            {/* <Route path="create" element={<AddPhoto/>}/> */}
                    </Route>
+                            <Route path="create" element={<AddPhoto/>}/>
                 </Route>
 
       </Routes>
     )
 
-}
+} 
