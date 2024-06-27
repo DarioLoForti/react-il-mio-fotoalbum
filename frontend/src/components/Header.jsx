@@ -10,6 +10,11 @@ const urlPages = [
         label: 'Photos',
         href: '/photos'
     
+    },
+    {
+        label: 'Contact us',
+        href: '/create-message'
+    
     }
 ]
 

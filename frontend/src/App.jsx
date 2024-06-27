@@ -13,7 +13,8 @@ import AddPhoto from "./pages/AddPhoto";
 import EditPhoto from "./pages/EditPhoto";
 import Categories from "./pages/Categories";
 import AddCategory from "./pages/AddCategory";
-
+import AddMessage from "./pages/AddMessage";
+import Messages from "./pages/Messages";
 
 export default function(){
 
@@ -26,6 +27,7 @@ export default function(){
                         <Route path="photos" element={<Photos/>}/>
                         <Route path="login" element={<Login/>}/>
                         <Route path="register" element={<Register/>}/>
+                        <Route path="create-message" element={<AddMessage/>}/>
                 </Route>
 
                 {/* Private */}
@@ -34,6 +36,7 @@ export default function(){
                     <DefaultLayout />
                     </ProtectPage>
                     }>
+                      <Route path="messages" element={<Messages/>}/>
                         <Route path="dashboard" element={<Dashboard />} />
                     <Route path="photos">
                             <Route path=":id" element={<ShowPhoto/>}/>
