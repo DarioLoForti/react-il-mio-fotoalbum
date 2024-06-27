@@ -8,7 +8,7 @@ const urlPhoto = [
     },
     {
         label: 'Add Photo',
-        href: '/create'
+        href: '/create-photo'
     },
 ];
 
@@ -19,7 +19,7 @@ const urlCategories = [
     },
     {
         label: 'Add Category',
-        href: '/categories/create'
+        href: '/create-category'
     },
 ];
 

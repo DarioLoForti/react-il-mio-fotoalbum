@@ -12,6 +12,7 @@ import ShowPhoto from "./pages/ShowPhoto";
 import AddPhoto from "./pages/AddPhoto";
 import EditPhoto from "./pages/EditPhoto";
 import Categories from "./pages/Categories";
+import AddCategory from "./pages/AddCategory";
 
 
 export default function(){
@@ -38,12 +39,13 @@ export default function(){
                             <Route path=":id" element={<ShowPhoto/>}/>
                             <Route path=":id/edit" element={<EditPhoto/>}/>
                    </Route>
+                   <Route path="create-photo" element={<AddPhoto/>}/>
                    <Route path="categories">
                             <Route index element={<Categories/>} />
                             <Route path=":id" element={<ShowPhoto/>}/>
                             <Route path=":id/edit" element={<EditPhoto/>}/>
                    </Route>
-                            <Route path="create" element={<AddPhoto/>}/>
+                    <Route path="create-category" element={<AddCategory/>}/>
                 </Route>
 
       </Routes>
