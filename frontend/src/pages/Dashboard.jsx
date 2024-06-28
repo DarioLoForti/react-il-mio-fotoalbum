@@ -39,7 +39,7 @@ const {isLoggedIn, logout, user} = useAuth();
     <div className="dashboard-container">
     <h1 className="dash">My Dashboard</h1>
 
-<div className="dashboard">
+        <div className="dashboard">
     <div className="card">
             {user.image_profile &&
                 <figure>
