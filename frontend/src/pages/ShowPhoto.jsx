@@ -10,6 +10,8 @@ export default function(){
 
     const [photo, setPhoto] = useState(null);
 
+    const [fullscreen, setFullscreen] = useState(false);
+
     const fetchPost = async () => {
         const { data: photo } = await axios.get(`/photos/${id}`);
             setPhoto(photo);
@@ -27,6 +29,9 @@ export default function(){
         fetchPost();
     },[]); 
 
+    const toggleFullscreen = () => {
+        setFullscreen(!fullscreen);
+    };
     
 
     return(<>
@@ -45,7 +50,16 @@ export default function(){
                         <h1>{ photo.title }</h1>
                         <h4 onClick={() => deletePhoto(photo.id)}>Elimina <MdDelete/></h4>
                     </div>
-                    <img src={photo.image} alt={photo.title} />
+                     {fullscreen && (
+                            <div className="fullscreen-overlay" onClick={toggleFullscreen}>
+                                <img src={photo.image} alt={photo.title} className="fullscreen-image" />
+                            </div>
+                        )}
+                        
+                        {!fullscreen && (
+                            <img src={photo.image} alt={photo.title} onClick={toggleFullscreen} />
+                        )}
+                        <h1>{photo.title}</h1>
                     <p>{photo.description}</p>
                     {photo.categories && <h4>Categorie:</h4>}
                     <ul>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "../utils/axiosClient";
 import { Link, useSearchParams } from "react-router-dom";
 
+
 export default function(){
 
 const [photos, setPhotos] = useState(null);
