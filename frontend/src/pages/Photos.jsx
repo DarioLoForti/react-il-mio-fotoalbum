@@ -13,6 +13,7 @@ useEffect(() => {
         axios.get(`/photos`).then(({data: res}) => setPhotos(res.data)
         
     );
+    
 }, []);
 
 const handleSearchChange = (e) => {
@@ -22,6 +23,14 @@ const handleSearchChange = (e) => {
 const filteredPhotos = photos?.filter(photo =>
     photo.title.toLowerCase().includes(searchTerm.toLowerCase())
 );
+
+const truncateDescription = (description) => {
+    if (description.length > 150) {
+        return description.substring(0, 150) + "...";
+    } else {
+        return description;
+    }
+};
 
 
     return (<>
@@ -37,7 +46,6 @@ const filteredPhotos = photos?.filter(photo =>
                     onChange={handleSearchChange}
                 />
             </div>
-            {/* <h1>Le mie foto</h1> */}
             {/* <div className="paginator">
                 <span>Current Page: {currPage}</span>
                 <button 
@@ -65,7 +73,7 @@ const filteredPhotos = photos?.filter(photo =>
                             <Link to={`/photos/${p.id}`} state={{ photos: p }}>
                                 <h2>{p.title}</h2>
                             </Link>
-                            <p>{p.description}</p>
+                            <p>{truncateDescription(p.description)}</p>
                         </div>
                     ))}
                 </div>

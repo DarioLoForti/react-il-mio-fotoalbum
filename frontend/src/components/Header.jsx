@@ -41,7 +41,7 @@ const {isLoggedIn, logout, user} = useAuth();
                     </>}
                     {isLoggedIn &&
                         <li>
-                            <NavLink to={`/dashboard`}>Dashboard</NavLink>
+                            <NavLink to={`/dashboard`}>{user.name}</NavLink>
                         </li>
                     }
                 </menu>
