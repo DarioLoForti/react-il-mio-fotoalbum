@@ -406,16 +406,20 @@ form{
 }
 
 .dashboard-container{
+    background-image: url(https://fotografiaartistica.it/wp-content/uploads/2018/11/fotografare-con-sfondo-nero-in-fotografia.jpg);
+    background-size: contain;
+    background-position: center;
+overflow: hidden;
     height: 100vh;
     .dash{
         text-align: center;
-        background-color: black;
+        // background-color: black;
         padding-top: 100px;
         color: white;
     }
     
     .dashboard{
-        background-color: black;
+        // background-color: black;
         height: 100%;
         display: flex;
         justify-content: space-around;
