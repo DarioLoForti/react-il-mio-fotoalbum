@@ -289,7 +289,11 @@ form{
 }
 
 #articleForm{
-    height: 100vh;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.664);
+    padding: 20px !important;
+    height: 100%;
     background-color: black;
     margin-bottom: 20px;
     color : white;
@@ -317,6 +321,18 @@ form{
         height: 100px;
         margin-bottom: 20px;
     }
+
+    .categories{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+        margin:auto;
+        padding: 20px;
+        label{
+            color: white;
+        }
+    }
 }
 
 .messag{
@@ -333,8 +349,32 @@ form{
         }
     }
 }
+.edit{
+    min-height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    padding: 20px;
+    h1{
+        text-align: center;
+        color: white ;
+        padding: 20px;
+    }
+    a{
+        background-color: #333;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 50px;
+    }
+  }
+
 
 .create{
+    min-height: 100vh;
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -361,66 +401,83 @@ form{
     gap: 1rem;
 }
 
-
-
-.dashboard{
-    background-color: black;
-    padding-top: 100px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    figure{
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-    }
-    img{
-        width: 50px;
-    }
-    h2{
+.dashboard-container{
+    height: 100vh;
+    .dash{
         text-align: center;
-    }
-    a{
+        background-color: black;
+        padding-top: 100px;
         color: white;
-        text-decoration: none;
-        ;
     }
-    ul{
-        list-style-type: none;
-        li{
+    
+    .dashboard{
+        background-color: black;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .card{
+            border: 1px solid #ccc;
+            color: white;
+            padding: 20px;
+            border-radius: 20px;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        figure{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+        img{
+            width: 100px;
+        }
+        h3{
             text-align: center;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            &:hover{
-                background-color: #555;
+            padding: 20px;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+            ;
+        }
+        ul{
+            list-style-type: none;
+            li{
+                text-align: center;
+                padding: 10px;
+                border-radius: 5px;
+                cursor: pointer;
+                &:hover{
+                    background-color: #555;
+                }
             }
         }
-    }
-    .user{
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-        h3{
-            margin-top: 10px;
-        
+        .user{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            h3{
+                margin-top: 10px;
+            
+            }
+    
+            button{
+                margin-bottom: 20px;
+                padding: 10px;
+                background-color: white;
+                color: black;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
         }
+      }
+}
 
-        button{
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: white;
-            color: black;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    }
-  }
 .messages{
     padding-top: 100px;
     margin-left: 150px;
@@ -599,16 +656,7 @@ form{
   
   
 
-  .edit{
-    background-color: black;
-    min-height: 100vh;
-    h1{
-        text-align: center;
-        padding-top: 100px;
-        padding-bottom: 20px;
-        color: white;
-    }
-  }
+  
 
   .slider {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.664);

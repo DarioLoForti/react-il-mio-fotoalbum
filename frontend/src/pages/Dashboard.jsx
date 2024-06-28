@@ -35,45 +35,49 @@ export default function(){
 
 const {isLoggedIn, logout, user} = useAuth();
 
-    return (
+    return (<>
+    <div className="dashboard-container">
+    <h1 className="dash">My Dashboard</h1>
 
-        <div className="dashboard">
-            <h2>Sidebar</h2>
-            <ul>
-                {urlPhoto.map( ({label, href}, i) => (
-                    <li key={`urlPhoto${i}`}>
-                        <NavLink to={href}>{label}</NavLink>
-                    </li>
-                ))}
-            </ul>
-            <ul>
-                {urlCategories.map( ({label, href}, i) => (
-                    <li key={`urlCategories${i}`}>
-                        <NavLink to={href}>{label}</NavLink>
-                    </li>
-                ))}
-            </ul>
-            <ul>
-                {urlMessage.map( ({label, href}, i) => (
-                    <li key={`urlMessage${i}`}>
-                        <NavLink to={href}>{label}</NavLink>
-                    </li>
-                ))}
-            </ul>
-            {isLoggedIn &&
-                        
-                        <div>
-                            {user.image_profile &&
-                                <figure>
-                                    <img src={user.image_profile} alt={user.name} />
-                                </figure>
-                            }
-                            <div className="user">
-                                <h3>{user.name && user.name}</h3>
-                                <button onClick={logout}>Logout</button>
-                            </div>
-                        </div>
-                }
-        </div>
+<div className="dashboard">
+    <div className="card">
+            {user.image_profile &&
+                <figure>
+                    <img src={user.image_profile} alt={user.name} />
+                </figure>
+            }
+            <div className="user">
+                <h3>{user.name && user.name}</h3>
+                <button onClick={logout}>Logout</button>
+            </div>
+    </div>
+    <div className="card">
+    {urlPhoto.map( ({label, href}, i) => (
+            <h3 key={`urlPhoto${i}`}>
+                <NavLink to={href}>{label}</NavLink>
+            </h3>
+        ))}
+    </div>
+    <div className="card">
+    {urlCategories.map( ({label, href}, i) => (
+            <h3 key={`urlCategories${i}`}>
+                <NavLink to={href}>{label}</NavLink>
+            </h3>
+        ))}
+    </div>
+    <div className="card">
+    {urlMessage.map( ({label, href}, i) => (
+            <h3 key={`urlMessage${i}`}>
+                <NavLink to={href}>{label}</NavLink>
+            </h3>
+        ))}
+    </div>
+    
+</div>
+    </div>
+    
+        </>
+
+        
     )
 }

@@ -44,6 +44,7 @@ export default function(){
 
     return(
         <div className="edit">
+            <Link to="../" relative='path'> Back to posts</Link>
             {dataToEdit === null ?
                 <div>Loading...</div>
             :
