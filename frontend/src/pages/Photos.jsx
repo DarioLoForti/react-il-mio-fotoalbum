@@ -6,6 +6,8 @@ export default function(){
 
 const [photos, setPhotos] = useState(null);
 
+const [searchTerm, setSearchTerm] = useState("");
+
 useEffect(() => {
     setPhotos(null);
         axios.get(`/photos`).then(({data: res}) => setPhotos(res.data)
@@ -13,11 +15,29 @@ useEffect(() => {
     );
 }, []);
 
+const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+};
+
+const filteredPhotos = photos?.filter(photo =>
+    photo.title.toLowerCase().includes(searchTerm.toLowerCase())
+);
+
 
     return (<>
            
            <div className="photos">
-            <h1>Le mie foto</h1>
+            <div className="top">
+                <h1>Le mie foto</h1>
+                <label>Search</label>
+                <input
+                    type="text"
+                    placeholder="Cerca per titolo..."
+                    value={searchTerm}
+                    onChange={handleSearchChange}
+                />
+            </div>
+            {/* <h1>Le mie foto</h1> */}
             {/* <div className="paginator">
                 <span>Current Page: {currPage}</span>
                 <button 
@@ -28,20 +48,27 @@ useEffect(() => {
                     onClick={()=>setSearchParams({page: currPage + 1})
                 }>+</button>
             </div> */}
+            {/* <label>Search</label>
+            <input
+                type="text"
+                placeholder="Cerca per titolo..."
+                value={searchTerm}
+                onChange={handleSearchChange}
+            /> */}
             {photos === null && <span className="loader"></span>}
-            {photos?.length === 0 && 'Photo not found.'}
-            {photos?.length > 0 && 
+            {filteredPhotos?.length === 0 && 'Photo not found.'}
+            {filteredPhotos?.length > 0 &&
                 <div className="card-container">
-                {photos.map(p => (
-                    <div className="card" key={`photos${p.id}`}>
-                        <img src={p.image} alt={p.title} />
-                        <Link to={`/photos/${p.id}`} state={{ photos: p }}>
-                            <h2>{p.title}</h2>
-                        </Link>
+                    {filteredPhotos.map(p => (
+                        <div className="card" key={`photos${p.id}`}>
+                            <img src={p.image} alt={p.title} />
+                            <Link to={`/photos/${p.id}`} state={{ photos: p }}>
+                                <h2>{p.title}</h2>
+                            </Link>
                             <p>{p.description}</p>
-                    </div>
-                ))}
-            </div>
+                        </div>
+                    ))}
+                </div>
             }
         </div>
     </>)

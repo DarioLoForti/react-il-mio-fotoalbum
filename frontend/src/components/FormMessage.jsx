@@ -32,6 +32,7 @@ export default function ({initialData, onSubmit}) {
                     <label> Name </label>
                     <input 
                         type="text"
+                        placeholder='Name'
                         value={data.name}
                         onChange={(e) => changeData('name', e.target.value)}
                     />
@@ -40,6 +41,7 @@ export default function ({initialData, onSubmit}) {
                     <label> Email </label>
                     <input 
                         type="email"
+                        placeholder='Email'
                         value={data.email}
                         onChange={(e) => changeData('email', e.target.value)}
                     />
@@ -48,6 +50,7 @@ export default function ({initialData, onSubmit}) {
                     <label> Message </label><br />
                     <textarea
                         value={data.message}
+                        placeholder='Message'
                         onChange={(e) => changeData('message', e.target.value)}
                     />
                 </div>
