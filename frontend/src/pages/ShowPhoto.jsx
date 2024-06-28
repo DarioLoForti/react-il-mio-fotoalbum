@@ -46,7 +46,7 @@ export default function(){
                 </div>
                 <div className="card-photo">
                     <div className="top-card">
-                        <h4><Link to={`/photos/${id}/edit`}>Modifica <MdEditNote /></Link></h4>
+                        <Link to={`/photos/${id}/edit`}>Modifica <MdEditNote /></Link>
                         <h1>{ photo.title }</h1>
                         <h4 onClick={() => deletePhoto(photo.id)}>Elimina <MdDelete/></h4>
                     </div>

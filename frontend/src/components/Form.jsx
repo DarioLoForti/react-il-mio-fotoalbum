@@ -63,7 +63,7 @@ export default function ({initialData, onSubmit}) {
                                     checked={data.categories.includes(id)}
                                     onChange={() => {
                                         const curr = data.categories;
-                                        const newTags = curr.includes(id) ?
+                                        const newCategories = curr.includes(id) ?
                                          curr.filter(c => c !== id) :
                                           [...curr, id];
                                         changeData('categories', newCategories);
