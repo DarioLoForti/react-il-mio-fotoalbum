@@ -479,12 +479,17 @@ form{
 }
 
 .messages{
+    background-color: black;
     padding-top: 100px;
-    margin-left: 150px;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     align-items: center;
+    h1{
+        text-align: center;
+        color: white;
+        padding-bottom: 30px;}
 
     ul{
         list-style-type: none;
@@ -522,12 +527,19 @@ form{
     }
 }
 .categories{
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
     padding-top: 100px;
-    margin-left: 150px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     align-items: center;
+    h1{
+        text-align: center;
+        color: white;
+        padding-bottom: 30px;
+    }
 
     ul{
         list-style-type: none;
